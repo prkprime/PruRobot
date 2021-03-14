@@ -2,8 +2,6 @@ from telegram import InlineQueryResultPhoto
 from uuid import uuid4
 
 from .http_codes import http_code_list
-from .get_image import get_image
-
 
 def inline_ket(update, context):
     query = update.inline_query.query
