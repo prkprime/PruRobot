@@ -1,6 +1,8 @@
-from telegram import InlineQueryResultArticle, InputTextMessageContent
+from telegram import InlineQueryResultPhoto
+from uuid import uuid4
 
 from .http_codes import http_code_list
+from .get_image import get_image
 
 
 def inline_ket(update, context):
@@ -8,10 +10,13 @@ def inline_ket(update, context):
     if not query:
         return
     results = [
-        InlineQueryResultArticle(
-            id=i + ' id',
-            title=i + ' title',
-            input_message_content=InputTextMessageContent(i + ' message'),
+        InlineQueryResultPhoto(
+            id=uuid4(),
+            type='photo',
+            title=i,
+            photo_url=f'https://http.cat/{i}',
+            thumb_url=f'https://http.cat/{i}',
+            caption=i
         )
         for i in http_code_list
         if i.startswith(query)
