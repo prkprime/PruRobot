@@ -3,6 +3,7 @@ from uuid import uuid4
 
 from .http_codes import http_code_list
 
+
 def inline_ket(update, context):
     query = update.inline_query.query
     if not query:
@@ -14,7 +15,7 @@ def inline_ket(update, context):
             title=i,
             photo_url=f'https://http.cat/{i}',
             thumb_url=f'https://http.cat/{i}',
-            caption=i
+            caption=i,
         )
         for i in http_code_list
         if i.startswith(query)
