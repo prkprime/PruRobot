@@ -8,6 +8,6 @@ BOT_TOKEN = config('BOT_TOKEN')
 updater = Updater(token=BOT_TOKEN, use_context=True)
 dispatcher = updater.dispatcher
 
-inline_ket_handler = InlineQueryHandler(inline_ket)
+inline_master_handler = InlineQueryHandler(inline_master)
 
-dispatcher.add_handler(inline_ket_handler)
+dispatcher.add_handler(inline_master_handler)
