@@ -16,8 +16,8 @@ def inline_dogge(update, context):
             id=uuid4(),
             type='photo',
             title=i,
-            photo_url=f'https://http.cat/{i}',
-            thumb_url=f'https://http.cat/{i}',
+            photo_url=f'https://httpstatusdogs.com/{i}',
+            thumb_url=f'https://httpstatusdogs.com/{i}',
             caption=i,
         )
         for i in http_code_list
