@@ -1,7 +1,7 @@
 from telegram import InlineQueryResultPhoto
 from uuid import uuid4
 
-from bot.modules.assets import http_code_list, inline_welp
+from bot.modules.assets import http_code_list_dogge, inline_welp
 
 
 def inline_dogge(update, context):
@@ -18,11 +18,11 @@ def inline_dogge(update, context):
                 id=uuid4(),
                 type='photo',
                 title=i,
-                photo_url=f'https://httpstatusdogs.com/{i}',
-                thumb_url=f'https://httpstatusdogs.com/{i}',
+                photo_url=f'https://httpstatusdogs.com/img/{i}.jpg',
+                thumb_url=f'https://httpstatusdogs.com/img/{i}.jpg',
                 caption=i,
             )
-            for i in http_code_list
+            for i in http_code_list_dogge
             if i.startswith(query[1])
         ]
     if not results:

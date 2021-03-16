@@ -1,10 +1,11 @@
 from telegram import InlineQueryResultPhoto
 from uuid import uuid4
 
-from bot.modules.assets import http_code_list, inline_welp
+from bot.modules.assets import http_code_list_ket, inline_welp
 
 
 def inline_ket(update, context):
+    results = []
     query = update.inline_query.query
     if not query:
         context.bot.answer_inline_query(update.inline_query.id, [inline_welp])
@@ -21,7 +22,7 @@ def inline_ket(update, context):
                 thumb_url=f'https://http.cat/{i}',
                 caption=i,
             )
-            for i in http_code_list
+            for i in http_code_list_ket
             if i.startswith(query[1])
         ]
     if not results:
