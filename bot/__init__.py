@@ -3,7 +3,7 @@ from decouple import config
 import logging
 from bot.modules import *
 
-BOT_TOKEN = config("BOT_TOKEN")
+BOT_TOKEN = config('BOT_TOKEN')
 
 updater = Updater(token=BOT_TOKEN, use_context=True)
 dispatcher = updater.dispatcher
