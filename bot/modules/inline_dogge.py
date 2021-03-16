@@ -5,6 +5,7 @@ from bot.modules.assets import http_code_list, inline_welp
 
 
 def inline_dogge(update, context):
+    results = []
     query = update.inline_query.query
     if not query:
         context.bot.answer_inline_query(update.inline_query.id, [inline_welp])
