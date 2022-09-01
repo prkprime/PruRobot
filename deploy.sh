@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function run_cmd() {
-    ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null prk@$SERVER_IP "$*"
+    ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@$SERVER_IP "$*"
 }
 
 eval $(ssh-agent)
